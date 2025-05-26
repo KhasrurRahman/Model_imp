@@ -33,7 +33,7 @@ class TorchNN(nn.Module):
     def forward(self, x):
         return self.net(x)
 
-def train_torch_nn(X_train, y_train, X_test, y_test, hidden_sizes, activation='leaky_relu', dropout=0.0, epochs=10, lr=0.01):
+def train_torch_nn(X_train, y_train, X_test, y_test, hidden_sizes, activation='leaky_relu', dropout=0.0, epochs=10, lr=0.01, return_history=False):
     device = torch.device('cpu')
     num_classes = y_train.shape[1]
     model = TorchNN(X_train.shape[1], hidden_sizes, activation, dropout, num_classes).to(device)
@@ -43,7 +43,7 @@ def train_torch_nn(X_train, y_train, X_test, y_test, hidden_sizes, activation='l
     y_train_t = torch.tensor(np.argmax(y_train, axis=1), dtype=torch.long)
     X_test_t = torch.tensor(X_test, dtype=torch.float32)
     y_test_t = torch.tensor(np.argmax(y_test, axis=1), dtype=torch.long)
-
+    history = {'loss': [], 'accuracy': []} if return_history else None
     for epoch in range(epochs):
         model.train()
         optimizer.zero_grad()
@@ -51,17 +51,22 @@ def train_torch_nn(X_train, y_train, X_test, y_test, hidden_sizes, activation='l
         loss = criterion(outputs, y_train_t)
         loss.backward()
         optimizer.step()
+        preds = outputs.argmax(1)
+        acc = (preds == y_train_t).float().mean().item()
+        if return_history:
+            history['loss'].append(loss.item())
+            history['accuracy'].append(acc)
         if epoch % 10 == 0:
-            preds = outputs.argmax(1)
-            acc = (preds == y_train_t).float().mean().item()
             print(f"Epoch {epoch}: Loss={loss.item():.4f}, Acc={acc:.4f}")
-
     model.eval()
     with torch.no_grad():
         test_outputs = model(X_test_t)
         preds = test_outputs.argmax(1).cpu().numpy()
         acc = (preds == y_test_t.cpu().numpy()).mean()
-    return acc, preds, model
+    if return_history:
+        return acc, preds, model, history
+    else:
+        return acc, preds, model
 
 from llm_implementation_code import load_voting_data, load_credit_data
 

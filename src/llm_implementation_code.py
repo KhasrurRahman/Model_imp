@@ -141,33 +141,38 @@ class NeuralNetwork:
             elif isinstance(layer, DropoutLayer):
                 d_loss = layer.backward(d_loss)
 
-    def train(self, X, y, epochs=200, learning_rate=0.01, batch_size=64):
+    def train(self, X, y, epochs=200, learning_rate=0.01, batch_size=64, return_history=False):
         for layer in self.layers:
             if isinstance(layer, DropoutLayer):
                 layer.set_training(True)
-
+        history = {'loss': [], 'accuracy': []} if return_history else None
         for epoch in range(epochs):
             indices = np.arange(X.shape[0])
             np.random.shuffle(indices)
-
             for start in range(0, X.shape[0], batch_size):
                 end = start + batch_size
                 batch_X = X[indices[start:end]]
                 batch_y = y[indices[start:end]]
                 y_pred = self.forward(batch_X)
                 self.backward(batch_y, learning_rate)
-
+            # Always collect history if requested
+            for layer in self.layers:
+                if isinstance(layer, DropoutLayer):
+                    layer.set_training(False)
+            y_pred = self.forward(X)
+            loss = cross_entropy_loss(y_pred, y)
+            acc = self.evaluate(X, y)
+            if return_history:
+                history['loss'].append(loss)
+                history['accuracy'].append(acc)
+            # Optionally print every 10 epochs
             if epoch % 10 == 0:
-                for layer in self.layers:
-                    if isinstance(layer, DropoutLayer):
-                        layer.set_training(False)
-                y_pred = self.forward(X)
-                loss = cross_entropy_loss(y_pred, y)
-                acc = self.evaluate(X, y)
                 print(f"Epoch {epoch}: Loss = {loss:.4f}, Accuracy = {acc:.4f}")
-                for layer in self.layers:
-                    if isinstance(layer, DropoutLayer):
-                        layer.set_training(True)
+            for layer in self.layers:
+                if isinstance(layer, DropoutLayer):
+                    layer.set_training(True)
+        if return_history:
+            return history
 
     def predict(self, X):
         for layer in self.layers:
