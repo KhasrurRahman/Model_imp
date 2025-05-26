@@ -45,4 +45,3 @@
 
 ---
 
-*This report summarizes the implementation, experimentation, and comparison as required by the assignment.*
