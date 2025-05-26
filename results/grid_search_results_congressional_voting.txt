@@ -1,0 +1,28 @@
+Grid Search Results:
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: tanh, Hidden Layers: 2, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 2, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: tanh, Hidden Layers: 2, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 2, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: relu, Hidden Layers: 3, Nodes per Layer: 32 => Accuracy: 0.9130
+Activation: tanh, Hidden Layers: 3, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 3, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: relu, Hidden Layers: 3, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: tanh, Hidden Layers: 3, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 3, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: relu, Hidden Layers: 4, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: tanh, Hidden Layers: 4, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 4, Nodes per Layer: 32 => Accuracy: 0.4783
+Activation: relu, Hidden Layers: 4, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: tanh, Hidden Layers: 4, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 4, Nodes per Layer: 64 => Accuracy: 0.4783
+Activation: relu, Hidden Layers: 5, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: tanh, Hidden Layers: 5, Nodes per Layer: 32 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 5, Nodes per Layer: 32 => Accuracy: 0.4783
+Activation: relu, Hidden Layers: 5, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: tanh, Hidden Layers: 5, Nodes per Layer: 64 => Accuracy: 0.9565
+Activation: sigmoid, Hidden Layers: 5, Nodes per Layer: 64 => Accuracy: 0.4783
+
+Best Configuration:
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 32, Dropout: 0.1 => Accuracy: 0.9565
