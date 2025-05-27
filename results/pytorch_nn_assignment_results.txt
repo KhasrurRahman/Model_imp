@@ -1,0 +1,10 @@
+Config: Activation=relu, Hidden Layers=2, Nodes per Layer=32, Dropout=0.0
+Accuracy: 0.7595
+Confusion Matrix:
+                  Predicted
+                |   0   |   1
+              -----------------
+Actual |   0   |  1410  |  261
+       |   1   |  543  |  1129
+Total Parameters: 1474
+Estimated RAM: 0.01 MB

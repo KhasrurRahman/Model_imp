@@ -1,0 +1,28 @@
+Grid Search Results:
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 32, Dropout: 0.0 => Accuracy: 0.7574
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 32, Dropout: 0.1 => Accuracy: 0.7544
+Activation: sigmoid, Hidden Layers: 2, Nodes per Layer: 32, Dropout: 0.0 => Accuracy: 0.6395
+Activation: sigmoid, Hidden Layers: 2, Nodes per Layer: 32, Dropout: 0.1 => Accuracy: 0.6416
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 64, Dropout: 0.0 => Accuracy: 0.7589
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 64, Dropout: 0.1 => Accuracy: 0.7625
+Activation: sigmoid, Hidden Layers: 2, Nodes per Layer: 64, Dropout: 0.0 => Accuracy: 0.6778
+Activation: sigmoid, Hidden Layers: 2, Nodes per Layer: 64, Dropout: 0.1 => Accuracy: 0.6515
+Activation: relu, Hidden Layers: 3, Nodes per Layer: 32, Dropout: 0.0 => Accuracy: 0.7562
+Activation: relu, Hidden Layers: 3, Nodes per Layer: 32, Dropout: 0.1 => Accuracy: 0.7598
+Activation: sigmoid, Hidden Layers: 3, Nodes per Layer: 32, Dropout: 0.0 => Accuracy: 0.6039
+Activation: sigmoid, Hidden Layers: 3, Nodes per Layer: 32, Dropout: 0.1 => Accuracy: 0.6386
+Activation: relu, Hidden Layers: 3, Nodes per Layer: 64, Dropout: 0.0 => Accuracy: 0.7610
+Activation: relu, Hidden Layers: 3, Nodes per Layer: 64, Dropout: 0.1 => Accuracy: 0.7598
+Activation: sigmoid, Hidden Layers: 3, Nodes per Layer: 64, Dropout: 0.0 => Accuracy: 0.6231
+Activation: sigmoid, Hidden Layers: 3, Nodes per Layer: 64, Dropout: 0.1 => Accuracy: 0.6243
+Activation: relu, Hidden Layers: 4, Nodes per Layer: 32, Dropout: 0.0 => Accuracy: 0.7556
+Activation: relu, Hidden Layers: 4, Nodes per Layer: 32, Dropout: 0.1 => Accuracy: 0.7589
+Activation: sigmoid, Hidden Layers: 4, Nodes per Layer: 32, Dropout: 0.0 => Accuracy: 0.6267
+Activation: sigmoid, Hidden Layers: 4, Nodes per Layer: 32, Dropout: 0.1 => Accuracy: 0.6183
+Activation: relu, Hidden Layers: 4, Nodes per Layer: 64, Dropout: 0.0 => Accuracy: 0.7592
+Activation: relu, Hidden Layers: 4, Nodes per Layer: 64, Dropout: 0.1 => Accuracy: 0.7577
+Activation: sigmoid, Hidden Layers: 4, Nodes per Layer: 64, Dropout: 0.0 => Accuracy: 0.6231
+Activation: sigmoid, Hidden Layers: 4, Nodes per Layer: 64, Dropout: 0.1 => Accuracy: 0.6141
+
+Best Configuration:
+Activation: relu, Hidden Layers: 2, Nodes per Layer: 64, Dropout: 0.1 => Accuracy: 0.7625

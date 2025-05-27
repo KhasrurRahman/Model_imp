@@ -1,0 +1,9 @@
+=== PyTorch NN on Credit Risk Dataset ===
+Config: Activation=relu, Hidden Layers=2, Nodes per Layer=32, Dropout=0.0
+Accuracy: 0.7559
+Confusion Matrix:
+                  Predicted
+                |   0   |   1
+              -----------------
+Actual |   0   |  1375  |  296
+       |   1   |  520  |  1152

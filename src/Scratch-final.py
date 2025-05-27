@@ -61,7 +61,7 @@ def load_credit_data(path=r"C:\Users\lukas\ML2\Credit Risk Benchmark Dataset.csv
 
     return X_train, X_test, y_train, y_test
 
-def load_voting_data(path=r"C:\Users\lukas\ML2\CongressionalVotingID.shuf.lrn.csv"):
+def load_voting_data(path=r"/data/CongressionalVotingID.shuf.lrn.csv"):
     df = pd.read_csv(path)
     df.replace({'y': 1, 'n': 0, 'unknown': np.nan}, inplace=True)
     df.dropna(inplace=True)

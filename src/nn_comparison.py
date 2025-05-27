@@ -13,7 +13,7 @@ from data_utils import load_credit_data, load_voting_data
 from nn_utils import compute_confusion_matrix, print_confusion_matrix, count_parameters, estimate_ram
 from standaloneNeuralNetworkFramework import NeuralNetwork as CustomNN
 from llm_implementation_code import NeuralNetwork as LLMNN
-from pytorch_nn_framework import train_torch_nn
+from src.pytorch_nn_final import train_torch_nn
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns

@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 from data_utils import load_credit_data, load_voting_data
-from nn_utils import compute_confusion_matrix, print_confusion_matrix, count_parameters, estimate_ram
+from nn_utils import compute_confusion_matrix, print_confusion_matrix
 
 class TorchNN(nn.Module):
     def __init__(self, input_dim, hidden_sizes, activation='leaky_relu', dropout=0.0, num_classes=2):
